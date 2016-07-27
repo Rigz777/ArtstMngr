@@ -1,0 +1,25 @@
+<h1>Sign in</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<div class="">
+  <%= form_tag do  %>
+  <div class="form-grou">
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+
+  <div class="form-grou">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class="form-grou">
+    <%= submit_tag "Sign In", class: "btn btn-primary" %>
+  </div>
+
+  <% end %>
+
+  <div class="form-group">
+    <%= link_to "Create Account", new_account_path %>
+  </div>
+</div>
