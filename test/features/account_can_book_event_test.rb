@@ -1,6 +1,6 @@
 require "test_helper"
 
-class AccountCanBookEventTest < Capybara::Rails::TestCase
+class AccountCanBookAndViewEventTest < Capybara::Rails::TestCase
   test "Can book and view new Event" do
 
     visit root_path
@@ -32,6 +32,11 @@ class AccountCanBookEventTest < Capybara::Rails::TestCase
 
     assert_content page, 'New Event Added'
     refute_content page, 'Add An Event'
+
+    click_link("Back To School Event")
+
+    assert_content page, ("Event Details")
+
 
   end
 
