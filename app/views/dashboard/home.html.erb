@@ -1,6 +1,32 @@
-<h1>ArtstMngr Dashboard</h1>
+<h1>Dashboard</h1>
 <p>Find me in app/views/dashboard/index.html.erb</p>
 
-<p>
-  IF YOU"RE SEEING THIS YOU'RE SIGNED IN!
+
+
+<div class="">
+  <ul id="event_descriptions">
+  <% @events.each do |event| %>
+  <%= link_to event.description, show_event_path(id: event.id) %>
+   <% end %>
+  </ul>
+
+</div>
+
+<div>
+  <%= link_to new_event_path, class: "btn btn-info btn-lg" do %>
+     <span class="glyphicon glyphicon-plus"></span> New Event
+  <% end %>
+</div>
+
+
+<% if notice %>
+<p class="alert alert-success">
+  <%= notice %>
 </p>
+
+<% elsif alert %>
+
+<p class="alert alert-danger">
+<%= alert %>
+</p>
+ <% end %>

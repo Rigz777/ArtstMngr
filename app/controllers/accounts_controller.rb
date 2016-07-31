@@ -1,4 +1,4 @@
-class AccountController < ApplicationController
+class AccountsController < ApplicationController
   def new
     @account = Account.new
   end

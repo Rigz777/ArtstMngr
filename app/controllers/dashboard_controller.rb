@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
     end
 
   def home
+    @events = Event.all
   end
 
   def show
