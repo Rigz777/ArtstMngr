@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'accounts/new'
-
-  get 'accounts/create'
-
   root 'dashboard#home'
 
   get 'welcome' => 'welcome#index', as: :welcome
+
+  get 'events/:id'  => 'events#show', as: :show_event
+  get 'events' => 'events#new', as: :new_event
+  post 'events' => 'events#create'
 
   get 'sign_in' => 'sessions#new', as: :sign_in
   post 'sign_in' => 'sessions#create'
