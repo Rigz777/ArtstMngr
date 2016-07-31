@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'sign_in' => 'sessions#create'
   delete 'sign_in' => 'sessions#destroy', as: :sign_out
 
-  get 'sign-up' => 'account#new', as: :new_account
-  post 'sign-up' => 'account#create'
+  get 'sign-up' => 'accounts#new', as: :new_account
+  post 'sign-up' => 'accounts#create'
 
 end

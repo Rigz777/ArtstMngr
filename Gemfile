@@ -28,7 +28,6 @@ gem 'bootstrap-sass'
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -1,22 +1,4 @@
 <h1>Dashboard</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
-
-
-
-<div class="">
-  <ul>
-  <% @events.each do |event| %>
-  <%= link_to event.description, show_event_path(id: event.id) %>
-   <% end %>
-  </ul>
-
-</div>
-
-<div>
-  <%= link_to new_event_path, class: "btn btn-info btn-lg" do %>
-     <span class="glyphicon glyphicon-plus"></span> New Event
-  <% end %>
-</div>
 
 
 <% if notice %>
@@ -30,3 +12,21 @@
 <%= alert %>
 </p>
  <% end %>
+
+<div class="container">
+  <div class="row">
+    <ul>
+    <% @events.each do |event| %>
+    <%= link_to event.description, show_event_path(id: event.id) %>
+     <% end %>
+    </ul>
+
+  </div>
+
+  <div class="row">
+    <%= link_to new_event_path, class: "btn btn-info btn-lg" do %>
+       <span class="glyphicon glyphicon-plus"></span> New Event
+    <% end %>
+  </div>
+
+</div>

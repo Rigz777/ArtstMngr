@@ -1,25 +1,35 @@
-<h1>Accounts#new</h1>
-<p>Find me in app/views/accounts/new.html.erb</p>
-
 <p>
   Create Your ArtstMngr Account
 </p>
 
-  <div class="well">
-    <%= form_for @account, url: new_account_path do |f| %>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.text_field :email, class: "form-control"%>
-      </div>
+<div>
+    <% if @account.errors.any? %>
+    <div class=" well alert alert-danger" role="alert">
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited your account from being created:</h2>
 
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control" %>
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
-      </div>
-          <%= f.submit, "Create Account" %>
-
+        <% @account.errors.full_messages.each do |msg| %>
+        <%= msg %><br>
+        <% end %>
+    </div>
     <% end %>
 
-  </div>
+<div class="container">
+
+    <div class="well">
+      <%= form_for @account, url: new_account_path do |f| %>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+            <%= f.submit "Create Account", class: "btn btn-info" %>
+      <% end %>
+    </div>
+
+</div>
