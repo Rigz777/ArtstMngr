@@ -1,3 +1,5 @@
+require 'cgi'
+
 class EventsController < ApplicationController
   def index
     @events = Event.all
@@ -29,6 +31,17 @@ class EventsController < ApplicationController
     @event.expected_attendance = params[:event][:xpected_attendance]
     @event.indoor_outdoor = params[:event][:indoor_outdoor]
     @event.performance_price = params[:event][:performance_price]
+
+    event_location = @event.location
+
+    results = JSON.parse(Http.get("http://locationiq.org/v1/search.php?key=5854c01d06bf4833124d&format=json&q=#{CGI::escape(event_location)}").body)
+
+
+    if results.any?
+      @event.latitude = results.first["lat"]
+      @event.longitude  = results.first["lon"]
+    end
+    
      if @event.save
        redirect_to root_path, notice: "New Event Added"
      else

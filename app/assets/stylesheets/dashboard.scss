@@ -1,3 +1,31 @@
-// Place all the styles related to the dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#map_id {
+  height: 93vh;
+}
+
+
+.page-header {
+  font-size: 250%
+}
+
+
+.wrapper {
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    width:100%;
+}
+
+.wrapper>div {
+    width: 100px;
+    height: 100px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    background: #A9A9A9;
+   border-radius: 50px;
+   padding: 50px;
+   text-align: center;
+   vertical-align: middle;
+   line-height: 15px;
+}

@@ -27,6 +27,8 @@ gem 'minitest-rails'
 gem 'bootstrap-sass'
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
+gem 'leaflet-rails'
+gem 'http'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

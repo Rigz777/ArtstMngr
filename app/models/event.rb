@@ -11,5 +11,4 @@ class Event < ActiveRecord::Base
   validates :performance_type, presence: true
   validates :performance_length, presence: true
   validates :performance_price, presence: true
-
 end

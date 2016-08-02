@@ -2,12 +2,14 @@
 <div class="container">
   <h1>Upcoming Performances</h1>
 
+
+
   <div id="map_id"></div>
 
 
   <script type="text/javascript">
 
-  var mymap = L.map('map_id').setView([29.7630556, -95.3630556], 13);
+  var mymap = L.map('map_id').setView([29.7630556, -95.3630556], 5);
 
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoidm9pcyIsImEiOiJjaXFuMXpmbWUwMHYwZ3NqZjk2cWczMHN3In0.YJuvpZWsWAf0pggg7gxXXQ', {
@@ -17,6 +19,10 @@
     accessToken: 'pk.eyJ1Ijoidm9pcyIsImEiOiJjaXFuMXpmbWUwMHYwZ3NqZjk2cWczMHN3In0.YJuvpZWsWAf0pggg7gxXXQ'
   }).addTo(mymap);
 
+      <% @events.each do |event| %>
+  L.marker([ <%= event.latitude %> , <%= event.longitude %>]).addTo(mymap).bindPopup( "Placeholder" );
+    <% end %>
   </script>
+
 
 </div>
