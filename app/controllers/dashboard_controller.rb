@@ -1,3 +1,4 @@
+require 'cgi'
 class DashboardController < ApplicationController
 
   before_action  do
@@ -13,6 +14,4 @@ class DashboardController < ApplicationController
   def show
   end
 
-  def new
-  end
 end
