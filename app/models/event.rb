@@ -11,4 +11,10 @@ class Event < ActiveRecord::Base
   validates :performance_type, presence: true
   validates :performance_length, presence: true
   validates :performance_price, presence: true
+
+
+  def half_price_in_cents
+    (performance_price.to_i) * 50
+  end
+
 end

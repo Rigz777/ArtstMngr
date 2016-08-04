@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'leaflet-rails'
 gem 'http'
+gem 'stripe'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
