@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   get 'welcome' => 'welcome#index', as: :welcome
 
+
+  get 'events/:event_id/charges/send' => 'events#send_invoice', as: :send_invoice
   get 'events/:id'  => 'events#show', as: :show_event
   get 'events' => 'events#new', as: :new_event
   post 'events' => 'events#create'
-
-
 
   get 'sign_in' => 'sessions#new', as: :sign_in
   post 'sign_in' => 'sessions#create'
@@ -18,5 +18,9 @@ Rails.application.routes.draw do
 
   get 'sign-up' => 'accounts#new', as: :new_account
   post 'sign-up' => 'accounts#create'
+
+
+  get 'events/:event_id/charges/new' => 'charges#new', as: :new_charge
+  post 'events/:event_id/charges' => 'charges#create', as: :charges
 
 end

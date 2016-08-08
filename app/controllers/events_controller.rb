@@ -41,13 +41,23 @@ class EventsController < ApplicationController
       @event.latitude = results.first["lat"]
       @event.longitude  = results.first["lon"]
     end
-    
+
      if @event.save
+       email = @event.email
+       DownPaymentMailer.collect_down_payment(email, @event).deliver_now
        redirect_to root_path, notice: "New Event Added"
      else
        flash.now[:alert] = "There was a problem with your form info"
        render :new
      end
   end
+
+  def send_invoice
+    @event = Event.find_by id: params[:event_id]
+    email = params[:email]
+
+    DownPaymentMailer.collect_down_payment(email, @event).deliver_now
+  end
+
 
 end

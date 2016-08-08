@@ -1,0 +1,49 @@
+<h3>Dashboard</h3>
+
+
+<% if notice %>
+<p class="alert alert-success">
+  <%= notice %>
+</p>
+
+<% elsif alert %>
+
+<p class="alert alert-danger">
+<%= alert %>
+</p>
+ <% end %>
+
+<div class="container">
+
+<<<<<<< HEAD
+    <div class="">
+      <%= link_to new_event_path, class: "btn btn-info btn" do %>
+=======
+    <div class="row">
+      <%= link_to new_event_path, class: "btn btn-info" do %>
+>>>>>>> master
+         <span class="glyphicon glyphicon-plus"></span> New Event
+      <% end %>
+    </div>
+
+<<<<<<< HEAD
+
+    <div class="wrapper">
+
+    <% @events.each do |event| %>
+      <div><%= link_to event.description, show_event_path(id: event.id) %></div>
+      <% end %>
+    </div>
+
+=======
+  <div class="row">
+    <div class="wrapper">
+    <% @events.each do |event| %>
+    <div><%= link_to event.description, show_event_path(id: event.id) %></div>
+     <% end %>
+   </div>
+>>>>>>> master
+
+
+
+</div>

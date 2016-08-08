@@ -1,7 +1,10 @@
 <h1>Event Details</h1>
 
 
-<div class="">
+<div class="col-xs-12 col-md-6 col-md-offset-3 well">
+  <%= link_to 'Send Email Invoice', send_invoice_path(event_id: @event.id), class: "btn btn-info" %><br>
+  <br>
+
 
   <ol>
     <li><strong>Description: <%= @event.description %></li>

@@ -1,0 +1,84 @@
+
+<p>
+  Description: <strong><%= @event.description %></strong>
+</p>
+
+<p>
+  Price: <strong><%= @event.performance_price %></strong>
+</p>
+
+<div class="row">
+
+  <div class="col-xs-12 col-md-6 col-md-offset-3 well">
+      <div class="">
+        <p>
+          Thank you for booking us for your next event. As per our discussion, 50% of the total purchase price is required in order to hold the date. Your card will be charged for the other 50% within 24 hours after the performance start time. Looking forward to rocking out iwth you! 😀
+        </p>
+      </div>
+
+    <ol>
+      <li><strong>Description: <%= @event.description %></li>
+      <li><strong>Talent Buyer: </strong><<%= @event.buyer %>
+      <li><strong>Contact: </strong><%= @event.contact_person %></li>
+      <li><strong>Phone: </strong><%= @event.phone %></li>
+      <li><strong>Email: </strong><%= @event.email %></li>
+      <li><strong>Site: </strong><%= @event.website %></li>
+      <li><strong>Date: </strong><%= @event.date %></li>
+      <li><strong>Time of Performance: </strong><%= @event.time_of_performance %></li>
+      <li><strong>Location: </strong><%= @event.location %></li>
+      <li><strong>Type of Performance: </strong><%= @event.performance_type %></li>
+      <li><strong>Set Length: </strong><%= @event.performance_length %></li>
+         <% if @event.other_type %>
+      <li><strong></strong><%= @event.other_type %></li>
+         <% end %>
+      <li><strong>Ticket Price: </strong><%= @event.ticket_price %></li>
+      <li><strong>Expected Attendance: </strong><%= @event.expected_attendance %></li>
+      <li><strong>Where: </strong><%= @event.indoor_outdoor %></li>
+      <li><strong>Performance Price: </strong><%= @event.performance_price %></li>
+    </ol>
+
+  </div>
+
+    <div class="col-xs-12 col-md-6 col-md-offset-3 well">
+      <%= form_tag charges_path(event_id: @event.id) do  %>
+        <div class="form-group">
+          <%= label_tag :description, "Your Email Address" %>
+          <%= text_field_tag :description, params[:description], class: "form-control", required: true  %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :credit_card %>
+          <%= number_field_tag :credit_card, "", class: "form-control", required: true  %>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <%= label_tag :credit_card_expiration_month, "Expiration Month" %>
+              <%= select_tag :credit_card_expiration_month, options_for_select((1..12).to_a), prompt: "Please Select a Month", class: "form-control"  %>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <%= label_tag :credit_card_expiration_year, "Expiration Year" %>
+              <%= select_tag :credit_card_expiration_year, options_for_select((Date.today.year .. Date.today.year + 15).to_a), prompt: "Please Select a Year", class: "form-control"    %>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <%= label_tag :credit_card_cvc, "Verification (CVC)" %>
+              <%= number_field_tag :credit_card_cvc, "", class: "form-control"    %>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+          <%= submit_tag "Make Payment", class: "btn btn-info" %>
+        </div>
+
+      <% end %>
+    </div>
+</div>
