@@ -15,4 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require leaflet
+//= require custom
+//= require get-shit-done
+//= require gsdk-checkbox
+//= require gsdk-bootstrapswitch
+//= require gsdk-radio
+//= require jquery-ui-1.10.4.custom.min
 //= require_tree .
