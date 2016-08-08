@@ -1,12 +1,11 @@
-<h1>Event Details</h1>
-
-
 <div class="col-xs-12 col-md-6 col-md-offset-3 well">
   <%= link_to 'Send Email Invoice', send_invoice_path(event_id: @event.id), class: "btn btn-info" %><br>
   <br>
+      <p>
+        Event Details
+      </p>
 
-
-  <ol>
+  <ul class="event">
     <li><strong>Description: <%= @event.description %></li>
     <li><strong>Talent Buyer: </strong><<%= @event.buyer %>
     <li><strong>Contact: </strong><%= @event.contact_person %></li>
@@ -25,6 +24,6 @@
     <li><strong>Expected Attendance: </strong><%= @event.expected_attendance %></li>
     <li><strong>Where: </strong><%= @event.indoor_outdoor %></li>
     <li><strong>Performance Price: </strong><%= @event.performance_price %></li>
-  </ol>
+  </ul>
 
 </div>
