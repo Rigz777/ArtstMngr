@@ -44,4 +44,5 @@ class ChargesController < ApplicationController
       render :new
     end
   end
+
 end
