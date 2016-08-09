@@ -8,16 +8,17 @@ Rails.application.routes.draw do
 
 
   get 'events/:event_id/charges/send' => 'events#send_invoice', as: :send_invoice
-  get 'events/:id'  => 'events#show', as: :show_event
+  get 'events/:id/show.pdf' => 'events#show', as: :show_event
   get 'events' => 'events#new', as: :new_event
   post 'events' => 'events#create'
 
   get 'sign_in' => 'sessions#new', as: :sign_in
   post 'sign_in' => 'sessions#create'
-  delete 'sign_in' => 'sessions#destroy', as: :sign_out
+  delete 'sign_in' => 'sessions#delete', as: :sign_out
 
   get 'sign-up' => 'accounts#new', as: :new_account
   post 'sign-up' => 'accounts#create'
+
 
 
   get 'events/:event_id/charges/new' => 'charges#new', as: :new_charge

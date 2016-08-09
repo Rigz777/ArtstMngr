@@ -30,6 +30,8 @@ gem 'faker'
 gem 'leaflet-rails'
 gem 'http'
 gem 'stripe'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

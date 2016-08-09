@@ -6,8 +6,16 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by id: params[:id]
-  end
+   respond_to do |format|
+     @event = Event.find_by id: params[:id]
+     format.html
+     format.pdf do
+       render pdf: "file_name"   # Excluding ".pdf" extension.
+     end
+   end
+ end
+
+
 
   def new
     @event = Event.new
