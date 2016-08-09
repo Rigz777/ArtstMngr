@@ -17,4 +17,9 @@ class Event < ActiveRecord::Base
     (performance_price.to_i) * 50
   end
 
+  def show_half_price
+    (performance_price.to_i) / 2
+
+  end
+
 end

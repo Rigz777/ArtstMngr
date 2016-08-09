@@ -2,7 +2,7 @@
     <div class="">
         <% if @event.errors.any? %>
         <div class="alert alert-danger" role="alert">
-          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this article from being saved:</h2>
+          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
             <% @event.errors.full_messages.each do |msg| %>
             <%= msg %><br>
