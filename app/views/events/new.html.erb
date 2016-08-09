@@ -1,5 +1,3 @@
-<h1>Add An Event</h1>
-
 
     <div class="">
         <% if @event.errors.any? %>
@@ -14,6 +12,8 @@
 
 
   <div class="col-xs-12 col-md-6 col-md-offset-3 well">
+          <h1>Add An Event Details</h1>
+
 
   <%= form_for @event, url: new_event_path do |f| %>
 
@@ -34,48 +34,48 @@
       </div>
 
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :phone %>
         <%= f.text_field :phone, class: 'form-control' %>
       </div>
 
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :email %>
         <%= f.text_field :email, class: 'form-control' %>
       </div>
 
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :website %>
         <%= f.text_field :website, class: 'form-control'  %>
       </div>
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :date, "Date (YYYY/MM/DD)" %>
         <%= f.text_field :date, class: 'form-control' %>
       </div>
 
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :venue_name, "Name of Venue"%>
         <%= f.text_field :venue_name, class: 'form-control' %>
       </div>
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :location, "Location (Street Address)" %>
         <%= f.text_field :location, class: 'form-control' %>
       </div>
 
 
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :time_of_performance%>
         <%= f.text_field :time_of_performance, class: 'form-control' %>
       </div>
 
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :performance_length%>
         <%= f.text_field :performance_length, class: 'form-control' %>
       </div>
@@ -101,7 +101,7 @@
         <%= f.text_field :other_type, class: 'form-control' %>
       </div>
 
-      <div class="form-group has-success has-success">
+      <div class="form-group has-success">
         <%= f.label :ticket_price%>
         <%= f.text_field :ticket_price, class: 'form-control' %>
       </div>
@@ -111,20 +111,23 @@
         <%= f.text_field :expected_attendance, class: 'form-control' %>
       </div>
 
-      <div class="form-group has-success has-success">
+
+
+      <div class="form-group has-success">
         <%= f.radio_button(:indoor_outdoor, "Indoor")%>
         <%= f.label(:indoor_outdoor, "Indoor") %>
         <%= f.radio_button(:indoor_outdoor, "Outdoor")%>
         <%= f.label(:indoor_outdoor, "Outdoor") %>
       </div>
 
-      <div class="form-group has-success has-success">
+
+      <div class="form-group has-success">
         <%= f.label :performance_price%>
         <%= f.text_field :performance_price, class: 'form-control' %>
       </div>
 
       <div>
-        <%= f.submit "Book Event", class: "btn btn-info"%>
+        <%= f.submit "Book Event", class: "btn btn-fill btn-lg btn-info"%>
     <% end %>
 
 </div>

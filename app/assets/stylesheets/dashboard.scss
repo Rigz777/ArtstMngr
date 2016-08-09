@@ -4,8 +4,15 @@
 
 
 .page-header {
-  font-size: 250%
 }
+
+
+body {
+  background-color: PapayaWhip;
+  color: #6666666;
+}
+
+
 
 
 .wrapper {
@@ -24,5 +31,8 @@
    border: 5px solid;
    width: 50%;
    margin: 20px;
+   border-radius: 25px;
+   text-align: center;
+   font-size: 20px;
 
 }
