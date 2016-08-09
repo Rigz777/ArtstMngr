@@ -1,4 +1,5 @@
 require 'cgi'
+require 'chronic'
 
 class EventsController < ApplicationController
   def index
@@ -29,7 +30,8 @@ class EventsController < ApplicationController
     @event.phone = params[:event][:phone]
     @event.email = params[:event][:email]
     @event.website = params[:event][:website]
-    @event.date = params[:event][:date]
+    date_parse = params[:event][:date]
+    @event.date = date_parse
     @event.time_of_performance = params[:event][:time_of_performance]
     @event.location = params[:event][:location]
     @event.performance_type = params[:event][:performance_type]

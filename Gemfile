@@ -32,6 +32,7 @@ gem 'http'
 gem 'stripe'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'chronic'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
