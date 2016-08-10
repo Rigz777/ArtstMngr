@@ -18,7 +18,6 @@ class LoginCanViewDashboardTest < Capybara::Rails::TestCase
     fill_in('Email', with: 'vois@recordlabel.com')
     fill_in('Password', with: '12345678')
     click_button('Sign In')
-    assert_content page, "ArtstMngr"
     assert_content page, "Event"
   end
 
