@@ -20,7 +20,7 @@
         <% end %>
 
     <% @events.each do |event| %>
-      <div col-md-4>Event: <%= link_to event.description, show_event_path(id: event.id, format: "pdf") %><br>
+      <div col-md-4>Event: <%= link_to event.description, details_path(id: event.id) %><br>
         Description: <%= event.description %><br>
         Location: <%= link_to event.location, map_path %>
       </div>

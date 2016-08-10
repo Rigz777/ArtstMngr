@@ -1,6 +1,8 @@
-
+<div class="col-xs-12 col-md-6 col-md-offset-3 well">
+  <br>
       <p>
-        Event Details
+        Event Details:
+        <%= link_to "Create PDF", show_event_path(id: @event.id, format: "pdf") %><br>
       </p>
 
   <ul class="event">
@@ -20,3 +22,9 @@
     <li><strong>Where: </strong><%= @event.indoor_outdoor %></li>
     <li><strong>Performance Price: </strong><%= @event.performance_price %></li>
   </ul>
+  <span>
+     <%= link_to :back do %>
+           <span style="font-size:15px;" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+          <% end %>
+       </span>
+</div>

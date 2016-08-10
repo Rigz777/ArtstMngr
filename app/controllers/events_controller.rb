@@ -6,6 +6,10 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def details
+    @event = Event.find_by id: params[:id]
+  end
+
   def show
    respond_to do |format|
      @event = Event.find_by id: params[:id]
