@@ -21,7 +21,7 @@ class AccountCanBookAndViewEventTest < Capybara::Rails::TestCase
     fill_in("Website", with: "htxpromotions.com")
     fill_in("Date", with: "October 31, 2016")
     fill_in("Time of performance", with: "9:30 PM")
-    fill_in("Location", with: "2970 West 38th St. Brooklyn, NY 11223")
+    fill_in("Location", with: "Statue of Liberty")
     choose("event_performance_type_speaking")
     fill_in("Performance length", with: "30 minutes")
     fill_in("Ticket price", with: "35")

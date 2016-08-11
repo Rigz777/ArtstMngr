@@ -11,7 +11,4 @@ class DashboardController < ApplicationController
     @events = Event.all
   end
 
-  def show
-  end
-
 end
