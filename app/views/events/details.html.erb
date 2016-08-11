@@ -24,7 +24,9 @@
   </ul>
   <span>
      <%= link_to :back do %>
-           <span style="font-size:15px;" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-          <% end %>
-       </span>
+        <span style="font-size:15px;" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><br/>
+     <% end %>
+    </span>
+    <%= link_to "Edit This Event |", edit_event_path %>
+    <%= link_to "Delete This Event", delete_event_path, method: :delete %>
 </div>

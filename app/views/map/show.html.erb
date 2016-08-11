@@ -18,7 +18,7 @@
   }).addTo(mymap);
 
       <% @events.each do |event| %>
-  L.marker([ <%= event.latitude %> , <%= event.longitude %>]).addTo(mymap).bindPopup( "Placeholder" );
+  L.marker([ <%= event.latitude %> , <%= event.longitude %>]).addTo(mymap).bindPopup( "placeholder" );
     <% end %>
   </script>
 

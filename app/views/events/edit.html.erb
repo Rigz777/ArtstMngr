@@ -1,0 +1,121 @@
+
+        <% if @event.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being updated:</h2>
+
+          <% @event.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+          <% end %>
+    </div>
+        <% end %>
+
+
+<div class="col-xs-12 col-md-6 col-md-offset-3 well">
+          <h1>Edit Event Details</h1>
+
+  <%= form_for @event, url: update_event_path do |f| %>
+
+  <div class="form-group has-success">
+    <%= f.label :description  %>
+    <%= f.text_field :description, class: 'form-control' %></input>
+  </div>
+
+    <div class="form-group has-success">
+        <%= f.label :buyer, "Talent Buyer"%>
+        <%= f.text_field :buyer, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.label :contact_person%>
+        <%= f.text_field :contact_person, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.label :website %>
+        <%= f.text_field :website, class: 'form-control'  %>
+  </div>
+
+    <div class="form-group has-success">
+        <%= f.label :date, "Date (YYYY/MM/DD)" %>
+        <%= f.text_field :date, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.label :venue_name, "Name of Venue"%>
+        <%= f.text_field :venue_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group has-success">
+        <%= f.label :location, "Location (Street Address)" %>
+        <%= f.text_field :location, class: 'form-control' %>
+    </div>
+
+
+
+    <div class="form-group has-success">
+        <%= f.label :time_of_performance%>
+        <%= f.text_field :time_of_performance, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.label :performance_length%>
+        <%= f.text_field :performance_length, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success has-success">
+      <%= f.radio_button(:performance_type, "Music")%>
+      <%= f.label(:performance_type, "Music") %>
+      <%= f.radio_button(:performance_type, "Speaking")%>
+      <%= f.label(:performance_type, "Speaking") %>
+      <%= f.radio_button(:performance_type, "Music")%>
+      <%= f.label(:performance_type, "Panel") %>
+      <%= f.radio_button(:performance_type, "Music")%>
+      <%= f.label(:performance_type, "Other") %>
+    </div>
+
+    <div class="form-group has-success">
+        <%= f.label :ticket_price%>
+        <%= f.text_field :ticket_price, class: 'form-control' %>
+    </div>
+
+    <div class="form-group has-success has-success">
+        <%= f.label :expected_attendance%>
+        <%= f.text_field :expected_attendance, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.radio_button(:indoor_outdoor, "Indoor")%>
+        <%= f.label(:indoor_outdoor, "Indoor") %>
+        <%= f.radio_button(:indoor_outdoor, "Outdoor")%>
+        <%= f.label(:indoor_outdoor, "Outdoor") %>
+    </div>
+
+
+    <div class="form-group has-success">
+        <%= f.label :performance_price%>
+        <%= f.text_field :performance_price, class: 'form-control' %>
+    </div>
+      <div class="">
+        <%= button_tag(type: 'submit', class: "btn btn-info btn-lg") do %>
+        <i class="glyphicon glyphicon-book"></i> Save Your Edit
+        <% end %>
+    </div>
+    <% end %>

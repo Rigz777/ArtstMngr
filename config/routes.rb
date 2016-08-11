@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'events/:id/show.pdf' => 'events#show', as: :show_event
   get 'events' => 'events#new', as: :new_event
   post 'events' => 'events#create'
+  get 'events/:id/edit' => 'events#edit', as: :edit_event
+  patch 'events/:id' => 'events#update', as: :update_event
+
+  delete 'events/:id' => 'events#delete', as: :delete_event
 
   get 'sign_in' => 'sessions#new', as: :sign_in
   post 'sign_in' => 'sessions#create'
