@@ -18,6 +18,27 @@ body {
   color: #2c3e50;
 }
 
+.right-nav {
+    float:right;
+    text-align: right;
+    color: #ecf0f1;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius:23px;
+}
+
+.right-button {
+  float:right;
+  text-align: right;
+  color: #109cff;
+  font-weight: bold;
+  margin-top: 20px;
+  border-radius:50px;
+  border: solid, 3px;
+}
+
+
+
 
 .wrapper {
   display:flex;
