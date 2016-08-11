@@ -19,6 +19,8 @@ class LoginCanViewDashboardTest < Capybara::Rails::TestCase
     fill_in('Password', with: '12345678')
     click_button('Sign In')
     assert_content page, "Event"
+    assert_content page, "Welcome"
+
   end
 
 

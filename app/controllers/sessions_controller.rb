@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
   def delete
     session.delete :account_id
-    redirect_to root_path, notice: "You Are Now Signed Out"
+    @current_user = nil
   end
 
 end
